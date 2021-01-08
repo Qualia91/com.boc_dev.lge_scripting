@@ -1,0 +1,1 @@
+mvn install:install-file -Dfile="luaj-jse-modules-3.0.1.jar" -DgroupId="org.luaj" -DartifactId="luaj-jse-modules" -Dversion="3.0.1" -Dpackaging="jar"
