@@ -9,16 +9,18 @@ import org.luaj.vm2.lib.jse.JsePlatform;
 public class LuaScript {
 
 	private final Globals globals;
+	private final String scriptFolderLocation;
 
-	public LuaScript() {
+	public LuaScript(String scriptFolderLocation) {
 
 		this.globals = JsePlatform.standardGlobals();
+		this.scriptFolderLocation = scriptFolderLocation;
 
 	}
 
-	public void call(String scriptCode, Registry registry) {
+	public void call(String script, Registry registry) {
 		globals.set("registry", CoerceJavaToLua.coerce(registry));
-		LuaValue chunk = globals.load(scriptCode);
+		LuaValue chunk = globals.loadfile(scriptFolderLocation + "\\" + script);
 		chunk.call();
 	}
 
