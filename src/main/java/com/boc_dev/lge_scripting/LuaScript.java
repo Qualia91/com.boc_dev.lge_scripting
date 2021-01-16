@@ -7,8 +7,6 @@ import org.luaj.vm2.LuaValue;
 import org.luaj.vm2.lib.jse.CoerceJavaToLua;
 import org.luaj.vm2.lib.jse.JsePlatform;
 
-import java.lang.reflect.InaccessibleObjectException;
-
 public class LuaScript {
 
 	private final Globals globals;
